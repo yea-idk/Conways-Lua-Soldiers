@@ -44,15 +44,27 @@ response = ""
 ::loop::
 if (response == "w") then -- commands
 	y = y - 1
+	if (y <= 0) then
+		y = 1
+	end
 end
 if (response == "s") then
 	y = y + 1
+	if (y >= mapsizey + 1) then
+		y = mapsizey
+	end
 end
 if (response == "a") then
 	x = x - 1
+	if (x <= 0) then
+		x = 1
+	end
 end
 if (response == "d") then
 	x = x + 1
+	if (x >= mapsizex + 1) then
+		x = mapsizex
+	end
 end
 if (response:match("e")) then
 	if (response:match("w")) then
